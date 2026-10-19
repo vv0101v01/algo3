@@ -1,0 +1,77 @@
+// Generated using `moon info`, DON'T EDIT IT
+package "user/hyperstructure/nbe"
+
+// Values
+pub fn beta_eta_equal(Tm, Tm) -> Bool
+
+pub fn checks() -> Array[(String, Bool, String)]
+
+pub fn eval(Array[Ty], Env, Tm) -> Val
+
+pub fn infer(Array[Ty], Tm) -> Ty?
+
+pub fn is_beta_normal(Tm) -> Bool
+
+pub fn is_eta_long(Ty, Tm) -> Bool
+
+pub fn is_normal(Ty, Tm) -> Bool
+
+pub fn normalize(Tm) -> Tm
+
+pub fn quote(Int, Ty, Val) -> Tm
+
+pub fn quote_neu(Int, Neu) -> Tm
+
+// Errors
+
+// Types and methods
+pub enum Env {
+  Nil
+  Cons(Val, Env)
+}
+pub fn Env::get(Self, Int) -> Val
+
+pub enum Neu {
+  NVar(Int, Ty)
+  NApp(Neu, Val, Ty)
+  NIf(Neu, Val, Val, Ty)
+  NFst(Neu, Ty)
+  NSnd(Neu, Ty)
+}
+pub fn Neu::ty(Self) -> Ty
+
+pub enum Tm {
+  Var(Int)
+  Lam(Ty, Tm)
+  App(Tm, Tm)
+  One
+  Tru
+  Fls
+  If(Tm, Tm, Tm)
+  Pair(Tm, Tm)
+  Fst(Tm)
+  Snd(Tm)
+}
+pub fn Tm::eq(Self, Self) -> Bool
+pub fn Tm::show(Self) -> String
+
+pub enum Ty {
+  U
+  B
+  Arr(Ty, Ty)
+  Prod(Ty, Ty)
+}
+pub fn Ty::eq(Self, Self) -> Bool
+pub fn Ty::show(Self) -> String
+
+pub enum Val {
+  VOne
+  VBool(Bool)
+  VClo(Env, Array[Ty], Ty, Tm)
+  VPair(Val, Val)
+  VNeu(Neu)
+}
+
+// Type aliases
+
+// Traits

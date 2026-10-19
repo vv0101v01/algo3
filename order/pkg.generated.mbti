@@ -1,0 +1,55 @@
+// Generated using `moon info`, DON'T EDIT IT
+package "user/hyperstructure/order"
+
+// Values
+pub fn birkhoff_check(Lattice) -> (Bool, Int, Int, String)
+
+pub fn chain(Int) -> Lattice
+
+pub fn checks() -> Array[(String, Bool, String)]
+
+pub fn diamond_m3() -> Lattice
+
+pub fn divisor_lattice(Int) -> Lattice
+
+pub fn downset_lattice(Poset) -> (Lattice, Array[Int])
+
+pub fn falses2(Int, Int) -> Array[Array[Bool]]
+
+pub fn lattice_from_tables(Int, Array[Array[Int]], Array[Array[Int]]) -> Lattice
+
+pub fn pentagon_n5() -> Lattice
+
+pub fn zeros2(Int, Int) -> Array[Array[Int]]
+
+// Errors
+
+// Types and methods
+pub struct Lattice {
+  n : Int
+  join : Array[Array[Int]]
+  meet : Array[Array[Int]]
+}
+pub fn Lattice::axioms(Self) -> Bool
+pub fn Lattice::bottom(Self) -> Int
+pub fn Lattice::heyting_adjunction(Self) -> Bool
+pub fn Lattice::heyting_impl(Self, Int, Int) -> Int
+pub fn Lattice::is_distributive(Self) -> Bool
+pub fn Lattice::join_irreducibles(Self) -> Array[Int]
+pub fn Lattice::knaster_tarski(Self, (Int) -> Int) -> Bool
+pub fn Lattice::leq(Self, Int, Int) -> Bool
+pub fn Lattice::lfp(Self, (Int) -> Int) -> Int
+pub fn Lattice::top(Self) -> Int
+
+pub struct Poset {
+  n : Int
+  le : Array[Array[Bool]]
+}
+pub fn Poset::is_antisymmetric(Self) -> Bool
+pub fn Poset::leq(Self, Int, Int) -> Bool
+pub fn Poset::linear_extension(Self) -> Array[Int]
+pub fn Poset::new_cover(Int, Array[(Int, Int)]) -> Self
+
+// Type aliases
+
+// Traits

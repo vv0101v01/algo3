@@ -1,0 +1,13 @@
+import {
+  "user/hyperstructure/num",
+  "user/hyperstructure/order",
+  "user/hyperstructure/cat",
+  "user/hyperstructure/nbe",
+  "user/hyperstructure/chain",
+  "user/hyperstructure/tm",
+  "user/hyperstructure/path",
+  "user/hyperstructure/trop",
+  "user/hyperstructure/nis",
+  "user/hyperstructure/der",
+  "user/hyperstructure/cat2",
+}

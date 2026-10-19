@@ -1,0 +1,70 @@
+// Generated using `moon info`, DON'T EDIT IT
+package "user/hyperstructure/cat"
+
+import {
+  "moonbitlang/core/bigint",
+  "user/hyperstructure/num",
+}
+
+// Values
+pub fn all_natural_transforms(Presheaf, Int) -> Array[NatTrans]
+
+pub fn checks() -> Array[(String, Bool, String)]
+
+pub fn cyclic_group(Int) -> FinCat
+
+pub fn factorial_big(Int) -> @bigint.BigInt
+
+pub fn fin_set_groupoid_cardinality(Int) -> @num.Rat
+
+pub fn poset_category(Int, Array[Array[Bool]]) -> FinCat
+
+pub fn walking_arrow() -> FinCat
+
+pub fn yoneda_backward(Presheaf, Int, NatTrans) -> Int
+
+pub fn yoneda_forward(Presheaf, Int, Int) -> NatTrans
+
+// Errors
+
+// Types and methods
+pub struct FinCat {
+  n_obj : Int
+  n_mor : Int
+  dom : Array[Int]
+  cod : Array[Int]
+  idm : Array[Int]
+  comp : Array[Array[Int]]
+}
+pub fn FinCat::axioms(Self) -> Bool
+pub fn FinCat::make(Int, Array[Int], Array[Int], Array[Int]) -> Self
+pub fn FinCat::rebuild(Self) -> Self
+
+pub struct Functor {
+  src : FinCat
+  dst : FinCat
+  on_obj : Array[Int]
+  on_mor : Array[Int]
+}
+pub fn Functor::is_functor(Self) -> Bool
+
+pub struct NatTrans {
+  dom : Presheaf
+  cod : Presheaf
+  comp : Array[Array[Int]]
+}
+pub fn NatTrans::is_natural(Self) -> Bool
+
+pub struct Presheaf {
+  cat : FinCat
+  sizes : Array[Int]
+  start : Array[Int]
+  act : Array[Array[Int]]
+}
+pub fn Presheaf::is_functor(Self) -> Bool
+pub fn Presheaf::of_constant(FinCat, Int) -> Self
+pub fn Presheaf::representable(FinCat, Int) -> Self
+
+// Type aliases
+
+// Traits

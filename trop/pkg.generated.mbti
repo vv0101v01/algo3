@@ -1,0 +1,57 @@
+// Generated using `moon info`, DON'T EDIT IT
+package "user/hyperstructure/trop"
+
+import {
+  "user/hyperstructure/num",
+}
+
+// Values
+pub const TROP_INF : Int = 1000000000
+
+pub fn balance_tripod(Int, Int) -> (Int, Int)
+
+pub fn checks() -> Array[(String, Bool, String)]
+
+pub fn gcd(Int, Int) -> Int
+
+pub fn lower_hull(Array[(Int, @num.Rat)]) -> Array[(Int, @num.Rat)]
+
+pub fn min_attained(Array[(Int, Int, Int)], (Int, Int)) -> Int
+
+pub fn poly_from_roots(Array[LSer]) -> Array[LSer]
+
+pub fn poly_mul(Array[LSer], Array[LSer]) -> Array[LSer]
+
+pub fn root_valuations(Array[LSer]) -> Array[(@num.Rat, Int)]
+
+// Errors
+
+// Types and methods
+pub struct LSer {
+  terms : Array[(@num.Rat, @num.Rat)]
+}
+pub fn LSer::add(Self, Self) -> Self
+pub fn LSer::is_zero(Self) -> Bool
+pub fn LSer::konst(Int) -> Self
+pub fn LSer::make(Array[(@num.Rat, @num.Rat)]) -> Self
+pub fn LSer::mono(@num.Rat, Int) -> Self
+pub fn LSer::mul(Self, Self) -> Self
+pub fn LSer::neg(Self) -> Self
+pub fn LSer::show(Self) -> String
+pub fn LSer::val(Self) -> @num.Rat?
+pub fn LSer::zero() -> Self
+
+pub struct Trop(Int)
+pub fn Trop::add(Self, Self) -> Self
+pub fn Trop::mul(Self, Self) -> Self
+pub fn Trop::of(Int) -> Self
+pub fn Trop::one() -> Self
+pub fn Trop::show(Self) -> String
+pub fn Trop::zero() -> Self
+pub impl Eq for Trop
+pub impl @num.Semiring for Trop
+
+// Type aliases
+pub type Term = (@num.Rat, @num.Rat)
+
+// Traits

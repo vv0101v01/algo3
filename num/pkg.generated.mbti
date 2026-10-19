@@ -1,0 +1,83 @@
+// Generated using `moon info`, DON'T EDIT IT
+package "user/hyperstructure/num"
+
+import {
+  "moonbitlang/core/bigint",
+}
+
+// Values
+pub const MODULUS : Int = 2147483647
+
+pub const MODULUS_MINUS_2 : Int = 2147483645
+
+pub fn big_abs(@bigint.BigInt) -> @bigint.BigInt
+
+pub fn big_gcd(@bigint.BigInt, @bigint.BigInt) -> @bigint.BigInt
+
+pub fn checks() -> Array[(String, Bool, String)]
+
+pub fn[T : Semiring] horner(Array[T], T) -> T
+
+pub fn legendre(Fp) -> Int
+
+// Errors
+
+// Types and methods
+pub struct Fp(Int)
+pub fn Fp::add(Self, Self) -> Self
+pub fn Fp::div(Self, Self) -> Self
+pub fn Fp::inv(Self) -> Self
+pub fn Fp::make(Int) -> Self
+pub fn Fp::mul(Self, Self) -> Self
+pub fn Fp::neg(Self) -> Self
+pub fn Fp::one() -> Self
+pub fn Fp::pow(Self, Int) -> Self
+pub fn Fp::sqrt(Self) -> Self
+pub fn Fp::sub(Self, Self) -> Self
+pub fn Fp::value(Self) -> Int
+pub fn Fp::zero() -> Self
+pub impl Add for Fp
+pub impl Div for Fp
+pub impl Eq for Fp
+pub impl Mul for Fp
+pub impl Neg for Fp
+pub impl Show for Fp
+pub impl Sub for Fp
+pub impl Semiring for Fp
+
+pub struct Rat {
+  num : @bigint.BigInt
+  den : @bigint.BigInt
+}
+pub fn Rat::add(Self, Self) -> Self
+pub fn Rat::compare(Self, Self) -> Int
+pub fn Rat::div(Self, Self) -> Self
+pub fn Rat::is_zero(Self) -> Bool
+pub fn Rat::make(@bigint.BigInt, @bigint.BigInt) -> Self
+pub fn Rat::mul(Self, Self) -> Self
+pub fn Rat::neg(Self) -> Self
+pub fn Rat::of_int(Int) -> Self
+pub fn Rat::one() -> Self
+pub fn Rat::sub(Self, Self) -> Self
+pub fn Rat::to_decimal(Self, Int) -> String
+pub fn Rat::zero() -> Self
+pub impl Add for Rat
+pub impl Compare for Rat
+pub impl Div for Rat
+pub impl Eq for Rat
+pub impl Mul for Rat
+pub impl Neg for Rat
+pub impl Show for Rat
+pub impl Sub for Rat
+pub impl Semiring for Rat
+
+// Type aliases
+
+// Traits
+pub(open) trait Semiring {
+  fn zero() -> Self
+  fn one() -> Self
+  fn add(Self, Self) -> Self
+  fn mul(Self, Self) -> Self
+}
+pub impl Semiring for Int

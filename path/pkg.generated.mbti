@@ -1,0 +1,44 @@
+// Generated using `moon info`, DON'T EDIT IT
+package "user/hyperstructure/path"
+
+// Values
+pub fn checks() -> Array[(String, Bool, String)]
+
+pub fn enumerate_paths(Graph, Int, Int) -> Array[Path]
+
+pub fn homotopy_classes(Graph, Int, Int) -> (DSU, Array[Path])
+
+pub fn rose(Int) -> Graph
+
+pub fn same_path(Path, Path) -> Bool
+
+// Errors
+
+// Types and methods
+pub struct DSU {
+  parent : Array[Int]
+}
+pub fn DSU::find(Self, Int) -> Int
+pub fn DSU::make(Int) -> Self
+pub fn DSU::union(Self, Int, Int) -> Unit
+
+pub struct Graph {
+  nv : Int
+  edges : Array[(Int, Int)]
+}
+pub fn Graph::compose(Self, Path, Path) -> Path
+pub fn Graph::end_of(Self, Path) -> Int
+pub fn Graph::has_edge(Self, Int, Int) -> Bool
+pub fn Graph::invert(Self, Path) -> Path
+pub fn Graph::reduce(Self, Path) -> Path
+pub fn Graph::valid(Self, Path) -> Bool
+
+pub struct Path {
+  start : Int
+  steps : Array[(Int, Bool)]
+}
+
+// Type aliases
+pub type Step = (Int, Bool)
+
+// Traits

@@ -1,0 +1,10 @@
+# MoonBit build artifacts
+_build/
+.mooncakes/
+.moon-lock
+
+# OS / editor
+.DS_Store
+*.swp
+.idea/
+.vscode/

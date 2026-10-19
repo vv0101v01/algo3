@@ -1,0 +1,102 @@
+// Generated using `moon info`, DON'T EDIT IT
+package "user/hyperstructure/cat2"
+
+import {
+  "moonbitlang/core/bigint",
+  "user/hyperstructure/num",
+}
+
+// Values
+pub fn card(Int) -> Int
+
+pub fn checks() -> Array[(String, Bool, String)]
+
+pub fn cyclic(Int) -> FinCat
+
+pub fn disj_union(Int, Int) -> (Int, Array[Int], Array[Int])
+
+pub fn factorial(Int) -> @bigint.BigInt
+
+pub fn fin_comp(FinMap, FinMap) -> FinMap
+
+pub fn fin_id(Int) -> FinMap
+
+pub fn groupoid_cardinality(Array[@bigint.BigInt]) -> @num.Rat
+
+pub fn hom(FinCat, Int, Int) -> Array[Int]
+
+pub fn is_category(FinCat) -> Bool
+
+pub fn is_functor(Functor) -> Bool
+
+pub fn is_iso(FinMap) -> Bool
+
+pub fn is_natural(NatTrans) -> Bool
+
+pub fn is_pnat(PNat) -> Bool
+
+pub fn is_presheaf(Presheaf) -> Bool
+
+pub fn poset_cat(Array[Array[Bool]]) -> FinCat
+
+pub fn presheaf(FinCat, Array[Int], Array[Array[Int]]) -> Presheaf
+
+pub fn product(Int, Int) -> Int
+
+pub fn representable(FinCat, Int) -> Presheaf
+
+pub fn sym_order(Int) -> @bigint.BigInt
+
+pub fn walking_arrow() -> FinCat
+
+pub fn yoneda_backward(Presheaf, Int, PNat) -> Int
+
+pub fn yoneda_forward(Presheaf, Int, Int) -> PNat
+
+// Errors
+
+// Types and methods
+pub struct FinCat {
+  n : Int
+  m : Int
+  dom : Array[Int]
+  cod : Array[Int]
+  idm : Array[Int]
+  comp : Array[Array[Int]]
+}
+
+pub struct FinMap {
+  dom : Int
+  cod : Int
+  tbl : Array[Int]
+}
+
+pub struct Functor {
+  c : FinCat
+  d : FinCat
+  on_obj : Array[Int]
+  on_mor : Array[Int]
+}
+
+pub struct NatTrans {
+  f : Functor
+  g : Functor
+  comp : Array[Int]
+}
+
+pub struct PNat {
+  f : Presheaf
+  g : Presheaf
+  comp : Array[Array[Int]]
+}
+
+pub struct Presheaf {
+  c : FinCat
+  size : Array[Int]
+  base : Array[Int]
+  act : Array[Array[Int]]
+}
+
+// Type aliases
+
+// Traits

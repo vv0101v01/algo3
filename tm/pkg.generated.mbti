@@ -1,0 +1,41 @@
+// Generated using `moon info`, DON'T EDIT IT
+package "user/hyperstructure/tm"
+
+import {
+  "user/hyperstructure/num",
+}
+
+// Values
+pub fn checks() -> Array[(String, Bool, String)]
+
+pub fn dist(Cx2, Cx2) -> Double
+
+pub fn in_fundamental_domain(Cx2, Double) -> Bool
+
+pub fn in_gamma2((Int, Int, Int, Int)) -> Bool
+
+pub fn j_invariant(@num.Rat) -> @num.Rat
+
+pub fn legendre_curve_order(Int, Int) -> Int
+
+pub fn legendre_q(Int, Int) -> Int
+
+pub fn mat_mul((Int, Int, Int, Int), (Int, Int, Int, Int)) -> (Int, Int, Int, Int)
+
+pub fn mobius((Int, Int, Int, Int), Cx2) -> Cx2
+
+pub fn powmod(Int, Int, Int) -> Int
+
+pub fn reduce(Cx2) -> (Cx2, (Int, Int, Int, Int))
+
+// Errors
+
+// Types and methods
+pub(all) struct Cx2 {
+  re : Double
+  im : Double
+}
+
+// Type aliases
+
+// Traits

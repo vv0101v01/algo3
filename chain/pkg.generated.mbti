@@ -1,0 +1,92 @@
+// Generated using `moon info`, DON'T EDIT IT
+package "user/hyperstructure/chain"
+
+import {
+  "user/hyperstructure/num",
+}
+
+// Values
+pub fn checks() -> Array[(String, Bool, String)]
+
+pub fn circle_complex() -> Cx
+
+pub fn complement_basis(Array[Array[@num.Rat]], Int) -> Array[Array[@num.Rat]]
+
+pub fn cone(CxMap) -> Cx
+
+pub fn coords_mod(Array[@num.Rat], Array[Array[@num.Rat]], Array[Array[@num.Rat]]) -> Array[@num.Rat]
+
+pub fn induce(Mat, Array[Array[@num.Rat]], Array[Array[@num.Rat]]) -> Mat
+
+pub fn induce_mod(Mat, Array[Array[@num.Rat]], Array[Array[@num.Rat]], Array[Array[@num.Rat]]) -> Mat
+
+pub fn mat_of_cols(Array[Array[@num.Rat]], Int) -> Mat
+
+pub fn rmul((Int, Int), (Int, Int)) -> (Int, Int)
+
+pub fn simplicial(Int, Array[Array[Int]]) -> Cx
+
+pub fn solve_coords(Array[Array[@num.Rat]], Array[@num.Rat]) -> Array[@num.Rat]?
+
+pub fn solve_linear(Mat, Array[@num.Rat]) -> Array[@num.Rat]?
+
+pub fn sphere_complex() -> Cx
+
+// Errors
+
+// Types and methods
+pub(all) struct Cx {
+  dims : Array[Int]
+  d : Array[Mat]
+}
+pub fn Cx::euler_char(Self) -> Int
+pub fn Cx::homology_dims(Self) -> Array[Int]
+pub fn Cx::is_complex(Self) -> Bool
+pub fn Cx::make(Array[Int], Array[Mat]) -> Self
+
+pub(all) struct CxMap {
+  src : Cx
+  dst : Cx
+  maps : Array[Mat]
+}
+pub fn CxMap::is_chain_map(Self) -> Bool
+
+pub(all) struct Mat {
+  r : Int
+  c : Int
+  d : Array[Array[@num.Rat]]
+}
+pub fn Mat::add(Self, Self) -> Self
+pub fn Mat::col_basis(Self) -> Array[Array[@num.Rat]]
+pub fn Mat::eq(Self, Self) -> Bool
+pub fn Mat::get(Self, Int, Int) -> @num.Rat
+pub fn Mat::id(Int) -> Self
+pub fn Mat::is_zero(Self) -> Bool
+pub fn Mat::ker_basis(Self) -> Array[Array[@num.Rat]]
+pub fn Mat::mul(Self, Self) -> Self
+pub fn Mat::neg(Self) -> Self
+pub fn Mat::of(Array[Array[@num.Rat]]) -> Self
+pub fn Mat::rank(Self) -> Int
+pub fn Mat::rref(Self) -> (Self, Array[Int])
+pub fn Mat::sub(Self, Self) -> Self
+pub fn Mat::transpose(Self) -> Self
+pub fn Mat::zero(Int, Int) -> Self
+
+pub(all) struct Snake {
+  a : Mat
+  b : Mat
+  c : Mat
+  f : Mat
+  g : Mat
+  f2 : Mat
+  g2 : Mat
+}
+pub fn Snake::exact(Self) -> Bool
+pub fn Snake::hypotheses(Self) -> Bool
+
+// Type aliases
+pub type RatMat = Array[Array[@num.Rat]]
+
+pub type Row = Array[@num.Rat]
+
+// Traits

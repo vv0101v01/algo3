@@ -1,0 +1,18 @@
+// Generated using `moon info`, DON'T EDIT IT
+package "user/hyperstructure/nis"
+
+// Values
+pub fn checks() -> Array[(String, Bool, String)]
+
+// Errors
+
+// Types and methods
+type Con
+
+type GSet
+
+type Mor
+
+// Type aliases
+
+// Traits
